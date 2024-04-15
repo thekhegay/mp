@@ -1,0 +1,8 @@
+@forward 'ol/ol.css';
+@forward 'ng-zorro-antd/style';
+@forward 'ng-zorro-antd/drawer/style';
+@forward 'ng-zorro-antd/popover/style';
+
+.ant-drawer-body {
+  padding: 0;
+}

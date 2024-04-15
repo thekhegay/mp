@@ -1,0 +1,97 @@
+<button
+  class="mp-actions-item mp-actions-item--has-badge"
+  [class.mp-actions-item--active]="isMessagesVisible"
+  nz-popover
+  nzPopoverTrigger="click"
+  [nzPopoverContent]="messageTpl"
+  nzPopoverPlacement="bottomRight"
+  nzPopoverOverlayClassName="mp-popover"
+  [(nzPopoverVisible)]="isMessagesVisible"
+>
+  <svg class="mp-actions-item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" d="M15.8332 15H4.16655c-.45917 0-.83333-.3733-.83333-.8333V6.04167l6.16666 4.62503c.14833.1116.32417.1666.5.1666.17582 0 .35162-.055.50002-.1666l6.1666-4.62503v8.12503c0 .46-.3741.8333-.8333.8333Zm-.5558-10L9.99988 8.95833 4.72238 5H15.2774Zm.5558-1.66667H4.1665c-1.37833 0-2.5 1.12167-2.5 2.5v8.33337c0 1.3783 1.12167 2.5 2.5 2.5h11.6667c1.3783 0 2.5-1.1217 2.5-2.5V5.83333c0-1.37833-1.1217-2.5-2.5-2.5Z" clip-rule="evenodd"/>
+  </svg>
+</button>
+<button
+  class="mp-actions-item mp-actions-item--has-badge"
+  [class.mp-actions-item--active]="isDevicesVisible"
+  nz-popover
+  nzPopoverTrigger="click"
+  [nzPopoverContent]="devicesTpl"
+  nzPopoverPlacement="bottomRight"
+  nzPopoverOverlayClassName="mp-popover"
+  [(nzPopoverVisible)]="isDevicesVisible"
+>
+  <svg class="mp-actions-item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" d="M9.99965 3.3335c3.03995 0 5.91745 1.1625 8.10415 3.27417.3308.31916.34.8475.0208 1.17833-.1633.16917-.3816.25417-.5991.25417-.2084 0-.4175-.0775-.5792-.23417-1.875-1.80917-4.3417-2.80583-6.94665-2.80583-2.605 0-5.07167.99666-6.94667 2.80583-.32917.32083-.8575.31167-1.17833-.02-.31834-.33083-.31-.85917.02166-1.17833C4.08298 4.496 6.96048 3.3335 9.99965 3.3335ZM9.99997 7.5c-2.02334 0-3.99.83417-5.39584 2.29-.31833.3317-.31.8592.02167 1.1783.33.32.85917.3109 1.17833-.02 1.0925-1.13247 2.62167-1.78163 4.19584-1.78163 1.57413 0 3.10333.64916 4.19583 1.78163.1633.1692.3817.2542.6.2542.2083 0 .4175-.0775.5783-.2342.3317-.3191.34-.8466.0217-1.1783C13.99 8.33417 12.0233 7.5 9.99997 7.5ZM7.1058 12.8358c.78084-.7533 1.80834-1.1691 2.89417-1.1691 1.08583 0 2.11333.4158 2.89413 1.1691.3309.32.34.8475.0209 1.1784-.1634.17-.3817.255-.6.255-.2084 0-.4175-.0784-.5784-.2342-.9375-.905-2.53579-.905-3.47329 0-.32917.32-.8575.3108-1.17834-.0208-.31916-.3309-.31-.8584.02083-1.1784Zm2.06084 2.9975c0-.46.3725-.8333.83333-.8333s.83333.3733.83333.8333-.3725.8334-.83333.8334-.83333-.3734-.83333-.8334Z" clip-rule="evenodd"/>
+  </svg>
+</button>
+<button
+  class="mp-actions-item mp-actions-item--has-badge"
+>
+  <svg class="mp-actions-item__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" d="m4.59566 13.3333.98334-.985c.315-.315.48833-.7333.48833-1.1783V7.2725c0-1.13083.49167-2.21167 1.35-2.96333.865-.75834 1.96667-1.09167 3.11417-.94084 1.9392.2575 3.4017 2.01084 3.4017 4.07917V11.17c0 .445.1733.8633.4875 1.1775l.9841.9858H4.59566Zm7.07074 1.9509c0 .7491-.7633 1.3825-1.66666 1.3825-.90333 0-1.66666-.6334-1.66666-1.3825V15h3.33332v.2842Zm5.4342-2.6109L15.5998 11.17V7.4475c0-2.90083-2.085-5.365-4.85-5.73083-1.60168-.21334-3.21834.27583-4.43084 1.33916-1.22 1.06834-1.91834 2.605-1.91834 4.21667L4.39979 11.17l-1.50083 1.5033c-.39084.3917-.50667.9742-.295 1.485.2125.5117.70666.8417 1.26.8417h2.8025v.2842c0 1.6816 1.495 3.0491 3.33333 3.0491 1.83831 0 3.33331-1.3675 3.33331-3.0491V15h2.8025c.5534 0 1.0467-.33 1.2584-.8408.2125-.5117.0975-1.095-.2934-1.4859Z" clip-rule="evenodd"/>
+  </svg>
+</button>
+
+<ng-template #messageTpl>
+  <div class="mp-popover-header">
+    <span class="mp-popover-header__title">
+      Сообщения
+      <span class="mp-popover-header__count">1</span>
+    </span>
+    <button class="mp-popover-header-close" (click)="isMessagesVisible = false">
+      <svg class="mp-popover-header-close__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+        <path fill-rule="evenodd" d="m7.41425 6 4.29295-4.293c.391-.391.391-1.023002 0-1.414002-.391-.3909998-1.023-.3909998-1.4139 0L6.00025 4.586 1.70725.292998c-.391-.3909998-1.023-.3909998-1.414 0-.391.391-.391 1.023002 0 1.414002L4.58625 6l-4.293 4.293c-.391.391-.391 1.023 0 1.414.195.195.451.293.707.293.256 0 .512-.098.707-.293l4.293-4.293 4.29305 4.293c.1949.195.451.293.7069.293.256 0 .512-.098.707-.293.391-.391.391-1.023 0-1.414L7.41425 6Z" clip-rule="evenodd"/>
+      </svg>
+    </button>
+  </div>
+  <div class="mp-popover-chat">
+    <div class="mp-popover-chat-item">
+      <div class="mp-popover-chat-item-avatar">
+        <img class="mp-popover-chat-item-avatar__image" src="assets/images/miner.webp" alt="Miner">
+        <span class="mp-popover-chat-item-avatar__badge">92051</span>
+      </div>
+      <div class="mp-popover-chat-item-body">
+        <div class="mp-popover-chat-item-body__top">
+          <span class="mp-popover-chat-item-body__title">Новиков М.К.</span>
+          <span class="mp-popover-chat-item-body__date">{{ now | displayDate  }}</span>
+        </div>
+        <p class="mp-popover-chat-item-body__bot">
+          Газовый контроль превышен на 1% необходимо исправить в срочном порядке
+        </p>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #devicesTpl>
+  <div class="mp-popover-header">
+    <span class="mp-popover-header__title">
+      Неразмещенные устройства
+      <span class="mp-popover-header__count">4</span>
+    </span>
+    <button class="mp-popover-header-close" (click)="isDevicesVisible = false">
+      <svg class="mp-popover-header-close__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+        <path fill-rule="evenodd" d="m7.41425 6 4.29295-4.293c.391-.391.391-1.023002 0-1.414002-.391-.3909998-1.023-.3909998-1.4139 0L6.00025 4.586 1.70725.292998c-.391-.3909998-1.023-.3909998-1.414 0-.391.391-.391 1.023002 0 1.414002L4.58625 6l-4.293 4.293c-.391.391-.391 1.023 0 1.414.195.195.451.293.707.293.256 0 .512-.098.707-.293l4.293-4.293 4.29305 4.293c.1949.195.451.293.7069.293.256 0 .512-.098.707-.293.391-.391.391-1.023 0-1.414L7.41425 6Z" clip-rule="evenodd"/>
+      </svg>
+    </button>
+  </div>
+  <div class="mp-popover-devices">
+    @for(device of devices; track $index) {
+      <div
+        class="mp-popover-devices-item"
+        [class.mp-popover-devices-item--primary]="device.status === 'primary'"
+        [class.mp-popover-devices-item--info]="device.status === 'info'"
+      >
+        <div class="mp-popover-devices-item-icon">
+          <img class="mp-popover-devices-item-icon__img" [src]="device.icon">
+        </div>
+        <span class="mp-popover-devices-item__title">{{ device.title }}</span>
+        <div class="mp-popover-devices-item-btn">
+          <img class="mp-popover-devices-item-btn__icon" src="assets/icons/plus.svg">
+        </div>
+      </div>
+    }
+  </div>
+</ng-template>

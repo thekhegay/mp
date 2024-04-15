@@ -1,0 +1,39 @@
+.mp-server-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9;
+  gap: 1.5rem;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 8px 16px 8px 16px;
+    border-radius: 4px;
+    min-width: 264px;
+    background-color: #fff;
+    box-shadow: 0px 0.5px 2px 0px #60617029, 0px 0px 1px 0px #28293D14;
+  }
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+
+    &__key,
+    &__value {
+      color: #52597A;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 15.4px;
+    }
+
+    &__value {
+      font-weight: 500;
+    }
+  }
+}

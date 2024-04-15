@@ -1,0 +1,138 @@
+.mp-drawer {
+  &-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 0.5px 2px 0 #60617029, 0 0 1px 0 #28293D14;
+
+    &__title,
+    &__count {
+      color: #52597A;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.1rem;
+    }
+
+    &__count {
+      color: #fff;
+      background-color: #0094FF;
+      line-height: 1rem;
+      padding: 0.25rem 0.875rem;
+      border-radius: 50rem;
+    }
+
+    &__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
+    }
+
+    &-btn {
+      --mp-drawer-btn-icon-color: #A3A8C2;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: transparent;
+
+      cursor: pointer;
+
+      &:hover {
+        --mp-drawer-btn-icon-color: #a7b1e8;
+      }
+
+      &:active {
+        --mp-drawer-btn-icon-color: #5b6283;
+      }
+
+      &__icon {
+        fill: var(--mp-drawer-btn-icon-color);
+        transition: all .125s linear;
+      }
+
+      &--search {
+        --mp-drawer-btn-icon-color: #0094FF;
+
+        &:hover {
+          --mp-drawer-btn-icon-color: #75c6ff;
+        }
+
+        &:active {
+          --mp-drawer-btn-icon-color: #0068b2;
+        }
+      }
+
+      &--xls {
+        --mp-drawer-btn-icon-color: #40BF6A;
+
+        &:hover {
+          --mp-drawer-btn-icon-color: #79d297;
+        }
+
+        &:active {
+          --mp-drawer-btn-icon-color: #339955;
+        }
+      }
+    }
+  }
+
+  &-table {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    &__inner {
+      border-collapse: separate;
+      border-spacing: 0.5rem 0.5rem;
+    }
+
+    &__badge {
+      color: #33374D;
+      background-color: #E5F4FF;
+      border-radius: 2px;
+      padding: 4px;
+    }
+
+    &__header {
+      border-bottom: 1px solid #E0E4F5;
+
+      & > th {
+        color: #52597A;
+        font-size: 0.75rem;
+        font-weight: 500;
+        line-height: 1rem;
+        padding: 1rem 0;
+
+        &:first-child {
+          padding-left: 0.75rem;
+        }
+        &:last-child {
+          padding-right: 0.75rem;
+        }
+      }
+    }
+
+    &__row {
+      box-shadow: 0 1px 3px 0 #60617029, 0 0 1px 0 #28293D14;
+      border-radius: 0.25rem;
+
+      & > td {
+        color: #52597A;
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 1rem;
+        padding: 0.75rem 0;
+
+        &:first-child {
+          padding-left: 0.75rem;
+        }
+        &:last-child {
+          padding-right: 0.75rem;
+        }
+      }
+    }
+  }
+}

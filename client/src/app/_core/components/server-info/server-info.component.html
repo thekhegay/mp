@@ -1,0 +1,11 @@
+<mp-map-controls />
+<div class="mp-server-info__wrapper">
+  <div class="mp-server-info-item">
+    <span class="mp-server-info-item__key">Время сервера:</span>
+    <span class="mp-server-info-item__value">{{ timestamp$ | async | displayDate:'HH:mm:ss' }}</span>
+  </div>
+  <div class="mp-server-info-item">
+    <span class="mp-server-info-item__key">Горизонт:</span>
+    <span class="mp-server-info-item__value">Первый горизонт</span>
+  </div>
+</div>

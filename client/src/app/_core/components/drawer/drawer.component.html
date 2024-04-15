@@ -1,0 +1,63 @@
+<div class="mp-drawer">
+  <div class="mp-drawer-header">
+    <span class="mp-drawer-header__title">
+      @if (data.value === itemType.VEHICLE) {
+        Техника
+      } @else {
+        Персонал
+      }
+      <span class="mp-drawer-header__count">{{ tableData().length }}</span>
+    </span>
+    <div class="mp-drawer-header__actions">
+      <button class="mp-drawer-header-btn mp-drawer-header-btn--search">
+        <svg class="mp-drawer-header-btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+          <path fill-rule="evenodd" d="M5.38628 11.2857c0-3.30898 2.691-5.99998 6.00002-5.99998 3.309 0 6 2.691 6 5.99998 0 3.309-2.691 6-6 6-3.30902 0-6.00002-2.691-6.00002-6Zm15.70692 8.293-3.395-3.396c1.053-1.354 1.688-3.051 1.688-4.897 0-4.41098-3.589-7.99998-8-7.99998-4.41097 0-7.99997 3.589-7.99997 7.99998 0 4.411 3.589 8 7.99997 8 1.846 0 3.543-.635 4.897-1.688l3.396 3.395c.195.195.451.293.707.293.256 0 .512-.098.707-.293.391-.391.391-1.023 0-1.414Z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+      <button class="mp-drawer-header-btn mp-drawer-header-btn--xls" (click)="exportTableToExcel()">
+        <svg class="mp-drawer-header-btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+          <path d="m3.24623 3.08578 12.56997-1.795c.071-.01017.1433-.00498.212.01523.0688.02021.1324.05496.1865.1019.0542.04695.0976.10498.1274.17018.0297.06519.0451.13603.0451.20769V22.6318c0 .0716-.0154.1423-.0451.2074-.0297.0651-.073.1231-.127.17-.0541.047-.1175.0817-.1862.102-.0686.0203-.1408.0256-.2117.0156l-12.57197-1.795c-.23838-.034-.45651-.1528-.61431-.3347-.1578-.1818-.24469-.4145-.24469-.6553V4.07578c0-.24078.08689-.47349.24469-.65535.1578-.18187.37693-.3007.61531-.33465Zm1.141 1.858V19.4738l9.99997 1.429V3.51478l-9.99997 1.429ZM17.3872 19.2088h3V5.20878h-3v-2h4c.2652 0 .5196.10536.7071.29289.1876.18754.2929.4419.2929.70711V20.2088c0 .2652-.1053.5196-.2929.7071-.1875.1875-.4419.2929-.7071.2929h-4v-2Zm-6.8-7 2.8 4h-2.4l-1.59997-2.286-1.6 2.286h-2.4l2.8-4-2.8-4.00002h2.4l1.6 2.28602 1.59997-2.28602h2.4l-2.8 4.00002Z"/>
+        </svg>
+      </button>
+      <button class="mp-drawer-header-btn" (click)="close()">
+        <svg class="mp-drawer-header-btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+          <path fill-rule="evenodd" d="m13.8002 12.2857 4.293-4.29298c.391-.391.391-1.023 0-1.414s-1.023-.391-1.414 0l-4.293 4.29298-4.29296-4.29298c-.391-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l4.29296 4.29298-4.29296 4.293c-.391.391-.391 1.023 0 1.414.195.195.451.293.707.293.256 0 .512-.098.707-.293l4.29296-4.293 4.293 4.293c.195.195.451.293.707.293.256 0 .512-.098.707-.293.391-.391.391-1.023 0-1.414l-4.293-4.293Z" clip-rule="evenodd"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="mp-drawer-table">
+  <table #table class="mp-drawer-table__inner">
+    <tr class="mp-drawer-table__header">
+      <th>
+        <mp-checkbox [ngModel]="isAllChecked()" (change)="checkAll($event)" />
+      </th>
+      <th>ID</th>
+      <th>
+        @if (data.value === itemType.VEHICLE) {
+          ФИО
+        } @else {
+          Наименование
+        }
+      </th>
+      <th>Выработка</th>
+      <th>Сильнейший узел</th>
+      <th>Временная метка</th>
+    </tr>
+    @for (item of tableData(); track $index) {
+      <tr class="mp-drawer-table__row">
+        <td>
+          <mp-checkbox [ngModel]="item.isChecked" (change)="changeItemChecked(item.id, $event)" />
+        </td>
+        <td><span class="mp-drawer-table__badge">{{ item.id }}</span></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.production }}</td>
+        <td>{{ item.node }}</td>
+        <td>{{ item.timestamp | displayDate }}</td>
+      </tr>
+    }
+  </table>
+
+</div>

@@ -1,0 +1,57 @@
+.mp-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9;
+
+  &-item {
+    --mp-actions-item-bg: #0094FF;
+    --mp-actions-item-icon-color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--mp-actions-item-bg);
+    transition: all .125s linear;
+    border-radius: 50rem;
+    cursor: pointer;
+
+    &__icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: var(--mp-actions-item-icon-color);
+    }
+
+    &:hover {
+      --mp-actions-item-bg: #4eb6ff;
+    }
+
+    &--active {
+      --mp-actions-item-bg: #2439A8;
+      pointer-events: none;
+    }
+
+    &--has-badge {
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50rem;
+        background-color: #FC6C6C;
+        border: 1px solid #fff;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}

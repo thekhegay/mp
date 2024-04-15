@@ -1,0 +1,7 @@
+<label class="mp-checkbox__wrapper" [for]="id">
+  <input class="mp-checkbox__input" type="checkbox" [ngModel]="checked" (ngModelChange)="writeValue($event)" [id]="id" />
+  <div class="mp-checkbox-inner">
+    <div class="mp-checkbox-inner__mark"></div>
+  </div>
+  <ng-content />
+</label>
